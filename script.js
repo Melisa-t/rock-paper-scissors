@@ -16,7 +16,7 @@ function getComputerChoice () {
             }
         }
 
-/* function getHumanChoice */
+
 //prompt and accept only rock, paper, scissors
 //else ask again
 
