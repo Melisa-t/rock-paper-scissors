@@ -15,13 +15,37 @@ function getComputerChoice () {
                 return "scissors"
             }
         }
+        
+let humanChoice;
+let computerChoice;
+let computerScore;
+let humanScore;
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
 const div = document.querySelector("div");
+
+function getHumanChoice(){
+
+rock.addEventListener("click", playRound => {
+    return humanChoice;
+});
+
+paper.addEventListener("click", playRound => {
+    return humanChoice;
+});
+
+scissors.addEventListener("click", playRound => {
+    return humanChoice;
+});
+} 
 
 //prompt and accept only rock, paper, scissors
 //else ask again
 
- function getHumanChoice(){
+/*  function getHumanChoice(){
     let humanChoice = prompt("Please choose one: rock, paper, scissors!").toLowerCase();
     if (humanChoice == "rock") {
         return humanChoice
@@ -33,7 +57,7 @@ const div = document.querySelector("div");
         return getHumanChoice();
     }
 }    
-
+ */
 
 // create humanScore and computerScore
 // initialize them with 0 
@@ -50,22 +74,7 @@ const div = document.querySelector("div");
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
-    function playRound(humanChoice, computerChoice) {
-        div.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
-        if (humanChoice === "rock" && computerChoice === "rock" || humanChoice === "paper" && computerChoice === "paper" || humanChoice === "scissors" && computerChoice === "scissors") {
-            div.textContent = "Tie!"
-            div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
-        } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ||humanChoice === "paper" && computerChoice === "rock") {
-            div.textContent = "Human has won the round!"
-            humanScore = humanScore + 1
-            div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
-        } else {
-            div.textContent = "Computer has won the round!"
-            computerScore = computerScore + 1
-            div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
-        }
-
-      }
+    playRound(humanChoice, computerChoice)
 
 
       /* for (let i = 0; i < 5; i++) {
@@ -81,5 +90,22 @@ function playGame() {
       }
 
 }
+
+function playRound(humanChoice, computerChoice) {
+    div.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+    if (humanChoice === "rock" && computerChoice === "rock" || humanChoice === "paper" && computerChoice === "paper" || humanChoice === "scissors" && computerChoice === "scissors") {
+        div.textContent = "Tie!"
+        div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
+    } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ||humanChoice === "paper" && computerChoice === "rock") {
+        div.textContent = "Human has won the round!"
+        humanScore = humanScore + 1
+        div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
+    } else {
+        div.textContent = "Computer has won the round!"
+        computerScore = computerScore + 1
+        div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
+    }
+
+  }
 
 playGame();
