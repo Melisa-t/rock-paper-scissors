@@ -16,6 +16,7 @@ function getComputerChoice () {
             }
         }
 
+const div = document.querySelector("div");
 
 //prompt and accept only rock, paper, scissors
 //else ask again
@@ -50,33 +51,33 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     function playRound(humanChoice, computerChoice) {
-        console.log(`This round: Human ${humanChoice}, Computer ${computerChoice}`)
+        div.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
         if (humanChoice === "rock" && computerChoice === "rock" || humanChoice === "paper" && computerChoice === "paper" || humanChoice === "scissors" && computerChoice === "scissors") {
-            console.log("Tie!")
-            console.log(`The scores: Human ${humanScore}, Computer ${computerScore}`)
+            div.textContent = "Tie!"
+            div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
         } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ||humanChoice === "paper" && computerChoice === "rock") {
-            console.log("Human has won the round!")
+            div.textContent = "Human has won the round!"
             humanScore = humanScore + 1
-            console.log(`The scores: Human ${humanScore}, Computer ${computerScore}`)
+            div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
         } else {
-            console.log ("Computer has won the round!")
+            div.textContent = "Computer has won the round!"
             computerScore = computerScore + 1
-            console.log(`The scores: Human ${humanScore}, Computer ${computerScore}`)
+            div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
         }
 
       }
 
-      
+
       /* for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice()); 
 } */
 
       if (computerScore > humanScore) {
-        console.log("Computer has won!")
+        div.textContent = "Computer has won!"
       } else if (computerScore < humanScore) {
-        console.log("Human has won!")
+        div.textContent = "Human has won!"
       } else {
-        console.log("No one won!")
+        div.textContent = "No one won!"
       }
 
 }
