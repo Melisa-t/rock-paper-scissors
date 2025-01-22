@@ -27,26 +27,20 @@ const scissors = document.querySelector("#scissors");
 
 const div = document.querySelector("div");
 
-function getHumanChoice(){
 
-rock.addEventListener("click", playRound => {
-    return humanChoice;
-});
 
-paper.addEventListener("click", playRound => {
-    return humanChoice;
-});
+rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
 
-scissors.addEventListener("click", playRound => {
-    return humanChoice;
-});
-} 
+paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+
+scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+// human choice!!! 
 
 //prompt and accept only rock, paper, scissors
 //else ask again
 
-/*  function getHumanChoice(){
-    let humanChoice = prompt("Please choose one: rock, paper, scissors!").toLowerCase();
+  function getHumanChoice(){
     if (humanChoice == "rock") {
         return humanChoice
     } else if (humanChoice == "paper") {
@@ -57,7 +51,7 @@ scissors.addEventListener("click", playRound => {
         return getHumanChoice();
     }
 }    
- */
+
 
 // create humanScore and computerScore
 // initialize them with 0 
@@ -92,6 +86,7 @@ function playGame() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    console.log(humanChoice, computerChoice)
     div.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
     if (humanChoice === "rock" && computerChoice === "rock" || humanChoice === "paper" && computerChoice === "paper" || humanChoice === "scissors" && computerChoice === "scissors") {
         div.textContent = "Tie!"
@@ -108,4 +103,3 @@ function playRound(humanChoice, computerChoice) {
 
   }
 
-playGame();
