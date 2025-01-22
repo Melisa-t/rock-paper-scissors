@@ -65,9 +65,11 @@ function playGame() {
         }
 
       }
-      for (let i = 0; i < 5; i++) {
+
+      
+      /* for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice()); 
-}
+} */
 
       if (computerScore > humanScore) {
         console.log("Computer has won!")
