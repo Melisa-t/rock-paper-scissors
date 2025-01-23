@@ -18,14 +18,18 @@ function getComputerChoice () {
         
 let humanChoice;
 let computerChoice;
-let computerScore;
-let humanScore;
+let computerScore = 0;
+let humanScore = 0;
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
-const div = document.querySelector("div");
+const result = document.querySelector("#result");
+const move = document.querySelector("#move")
+const total = document.querySelector("#total")
+
+
 
 
 
@@ -65,40 +69,38 @@ scissors.addEventListener("click", () => playRound("scissors", getComputerChoice
 
 
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    playRound(humanChoice, computerChoice)
-
 
       /* for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice()); 
 } */
 
       if (computerScore > humanScore) {
-        div.textContent = "Computer has won!"
+        result.textContent = "Computer has won!"
       } else if (computerScore < humanScore) {
-        div.textContent = "Human has won!"
+        result.textContent = "Human has won!"
       } else {
-        div.textContent = "No one won!"
+        result.textContent = "No one won!"
       }
 
-}
+      
 
+    
 function playRound(humanChoice, computerChoice) {
-    console.log(humanChoice, computerChoice)
-    div.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+    total.textContent = `This round: Human ${humanScore}, Computer ${computerScore}`
+    move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
     if (humanChoice === "rock" && computerChoice === "rock" || humanChoice === "paper" && computerChoice === "paper" || humanChoice === "scissors" && computerChoice === "scissors") {
-        div.textContent = "Tie!"
-        div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
-    } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ||humanChoice === "paper" && computerChoice === "rock") {
-        div.textContent = "Human has won the round!"
+        result.textContent = "Tie!"
         humanScore = humanScore + 1
-        div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
-    } else {
-        div.textContent = "Computer has won the round!"
         computerScore = computerScore + 1
-        div.textContent = `The scores: Human ${humanScore}, Computer ${computerScore}`
+        move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+    } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ||humanChoice === "paper" && computerChoice === "rock") {
+        result.textContent = "Human has won the round!"
+        humanScore = humanScore + 1
+        move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+    } else {
+        result.textContent = "Computer has won the round!"
+        computerScore = computerScore + 1
+        move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
     }
 
   }
