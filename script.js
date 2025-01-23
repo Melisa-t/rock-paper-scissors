@@ -14,6 +14,7 @@ let humanScore = 0;
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const game = document.querySelectorAll(".game")
 
 const result = document.querySelector("#result");
 const move = document.querySelector("#move")
@@ -27,12 +28,14 @@ paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
-restart.addEventListener("click", restartGame(computerScore, humanScore))
+restart.addEventListener("click", () => restartGame());
 
-function restartGame (computerScore, humanScore) {
+function restartGame () {
     console.log(computerScore, humanScore)
     computerScore = 0; 
     humanScore = 0;
+    total.textContent = `This round: Human ${humanScore}, Computer ${computerScore}`
+    changeGame(false)
 }
 
 console.log(restartGame())
@@ -92,7 +95,18 @@ function playRound(humanChoice, computerChoice) {
   function endGame(humanScore, computerScore) {
     if (humanScore == 6) {
         alert("You have won!");
+        changeGame(true)
     } else if (computerScore == 6 ) {
         alert("Computer has won!")
+        changeGame(true)
     }
   }
+
+  function changeGame (isDisabled) {
+    console.log(game)
+    game[0].disabled = isDisabled;
+    game[1].disabled = isDisabled;
+    game[2].disabled = isDisabled;
+  }
+
+  //loop here 
