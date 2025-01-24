@@ -3,6 +3,21 @@
     padding: 0;
   }
 
+  :root{
+    --background-color-light: #EDE8DC;
+    --background-color-dark: #86A788;
+    --text-color: #5C7285;
+    --button-color-light: #EDE8DC;
+    --button-border-color-light: #86A788;
+    --button-color-dark: #86A788;
+    --button-border-color-dark: #EDE8DC;
+    --button-hover-color-light:#86A788;
+    --button-hover-color-dark:#EDE8DC;
+    --button-hover-border-color-dark:#86A788;
+    --button-hover-border-color-light:#EDE8DC;
+  }
+
+
 
   body {
     background-color: #EDE8DC;
@@ -62,6 +77,12 @@
 .center{
     justify-content: center;
     align-items: center;
+}
+.night-mode {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  right: 0;
 }
 
 /* The switch - the box around the slider */

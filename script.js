@@ -9,6 +9,7 @@ let computerChoice;
 let computerScore = 0;
 let humanScore = 0;
 
+
 //creating variables to change DOM
 
 const rock = document.querySelector("#rock");
@@ -31,6 +32,8 @@ scissors.addEventListener("click", () => playRound("scissors", getComputerChoice
 
 restart.addEventListener("click", () => restartGame());
 
+restart.disabled = true;
+
 //a function that will be called when clicked Restart Button
 
 function restartGame () {
@@ -41,6 +44,11 @@ function restartGame () {
     result.textContent = "Welcome again!"
     move.textContent = ``
     changeGame(false)
+
+}
+
+function restartButton (isDisabled) {
+    restart.disabled = isDisabled;
 }
 
 //not needed in this version of the game
@@ -63,6 +71,7 @@ function restartGame () {
 // so computer randomly chooses rock, paper, or scissors.
 
 function getComputerChoice () {
+    
     let computerChoice = Math.floor(Math.random() * 3 + 1);
     if (computerChoice == 1) {
         return "rock" }
@@ -78,6 +87,7 @@ function getComputerChoice () {
 // as well as this round's result is displayed.
     
 function playRound(humanChoice, computerChoice) {
+    restartButton(false)
     total.textContent = `Scores: You ${humanScore}, Computer ${computerScore}`
     move.textContent = `This round: You ${humanChoice}, Computer ${computerChoice}`
         if (humanChoice === "rock" && computerChoice === "rock" || 
@@ -122,7 +132,6 @@ function playRound(humanChoice, computerChoice) {
   }
 
   function changeGame (isDisabled) {
-    console.log(game)
     for (let i = 0;  i <= game.length; i++) {
         game[i].disabled = isDisabled;
       }
