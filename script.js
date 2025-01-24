@@ -34,7 +34,7 @@ function restartGame () {
     console.log(computerScore, humanScore)
     computerScore = 0; 
     humanScore = 0;
-    total.textContent = `This round: Human ${humanScore}, Computer ${computerScore}`
+    total.textContent = `This round: You ${humanScore}, Computer ${computerScore}`
     changeGame(false)
 }
 
@@ -65,21 +65,21 @@ function getComputerChoice () {
 
     
 function playRound(humanChoice, computerChoice) {
-    total.textContent = `This round: Human ${humanScore}, Computer ${computerScore}`
-    move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+    total.textContent = `This round: You ${humanScore}, Computer ${computerScore}`
+    move.textContent = `This round: You ${humanChoice}, Computer ${computerChoice}`
     if (humanChoice === "rock" && computerChoice === "rock" || humanChoice === "paper" && computerChoice === "paper" || humanChoice === "scissors" && computerChoice === "scissors") {
         result.textContent = "Tie!"
         humanScore = humanScore + 1
         computerScore = computerScore + 1
-        move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+        move.textContent = `This round: You ${humanChoice}, Computer ${computerChoice}`
     } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ||humanChoice === "paper" && computerChoice === "rock") {
-        result.textContent = "Human has won the round!"
+        result.textContent = "You have won the round!"
         humanScore = humanScore + 1
-        move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+        move.textContent = `This round: You ${humanChoice}, Computer ${computerChoice}`
     } else {
         result.textContent = "Computer has won the round!"
         computerScore = computerScore + 1
-        move.textContent = `This round: Human ${humanChoice}, Computer ${computerChoice}`
+        move.textContent = `This round: You ${humanChoice}, Computer ${computerChoice}`
     }
     endGame(humanScore,computerScore)
   }
@@ -87,16 +87,20 @@ function playRound(humanChoice, computerChoice) {
   if (computerScore > humanScore) {
     result.textContent = "Computer has won the round!"
   } else if (computerScore < humanScore) {
-    result.textContent = "Human has won the round!"
+    result.textContent = "You have won the round!"
   } else {
     result.textContent = "No one won the round!"
   }
 
   function endGame(humanScore, computerScore) {
     if (humanScore == 6) {
+        total.textContent = `This round: You ${humanScore}, Computer ${computerScore}`
+        result.textContent = "You have won!"
         alert("You have won!");
         changeGame(true)
     } else if (computerScore == 6 ) {
+        total.textContent = `This round: You ${humanScore}, Computer ${computerScore}`
+        result.textContent = "Computer has won!"
         alert("Computer has won!")
         changeGame(true)
     }
@@ -104,9 +108,11 @@ function playRound(humanChoice, computerChoice) {
 
   function changeGame (isDisabled) {
     console.log(game)
-    game[0].disabled = isDisabled;
-    game[1].disabled = isDisabled;
-    game[2].disabled = isDisabled;
+    for (let i = 0;  i <= 3; i++) {
+        game[i].disabled = isDisabled;
+      }
   }
 
   //loop here 
+
+ 
