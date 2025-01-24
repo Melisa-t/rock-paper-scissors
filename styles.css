@@ -85,6 +85,7 @@
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin: 0px 0px 10px 10px;
   }
   
   /* Hide default HTML checkbox */
@@ -105,6 +106,7 @@
     background-color: var(--dark-color);
     -webkit-transition: .4s;
     transition: .4s;
+    
   }
   
   .slider:before {
