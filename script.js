@@ -22,7 +22,8 @@ const move = document.querySelector("#move")
 const total = document.querySelector("#total")
 const restart = document.querySelector("#restart")
 
-//event listeners for buttons
+
+//event listeners for buttons 
 
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
 
@@ -34,16 +35,18 @@ restart.addEventListener("click", () => restartGame());
 
 restart.disabled = true;
 
+
+
 //a function that will be called when clicked Restart Button
 
 function restartGame () {
-    console.log(computerScore, humanScore)
     computerScore = 0; 
     humanScore = 0;
     total.textContent = `Scores are reset.`
     result.textContent = "Welcome again!"
     move.textContent = ``
     changeGame(false)
+    
 
 }
 
@@ -132,7 +135,7 @@ function playRound(humanChoice, computerChoice) {
   }
 
   function changeGame (isDisabled) {
-    for (let i = 0;  i <= game.length; i++) {
+    for (let i = 0;  i <= 2; i++) {
         game[i].disabled = isDisabled;
       }
   }
