@@ -1,8 +1,3 @@
-
-
-
-
-
         
 let humanChoice;
 let computerChoice;
@@ -15,12 +10,14 @@ let humanScore = 0;
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
-const game = document.querySelectorAll(".game")
+const game = document.querySelectorAll(".game");
 
 const result = document.querySelector("#result");
-const move = document.querySelector("#move")
-const total = document.querySelector("#total")
-const restart = document.querySelector("#restart")
+const move = document.querySelector("#move");
+const total = document.querySelector("#total");
+const restart = document.querySelector("#restart");
+const body = document.querySelector("body");
+const nightMode = document.querySelector("input");
 
 
 //event listeners for buttons 
@@ -33,9 +30,13 @@ scissors.addEventListener("click", () => playRound("scissors", getComputerChoice
 
 restart.addEventListener("click", () => restartGame());
 
+nightMode.addEventListener("click", () => changeNightMode ())
+
 restart.disabled = true;
 
-
+function changeNightMode () {
+    body.classList.toggle("dark-mode");
+}
 
 //a function that will be called when clicked Restart Button
 

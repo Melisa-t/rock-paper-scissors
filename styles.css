@@ -9,8 +9,18 @@
     --text-color: #5C7285;
     --wrap-color-light: rgba(134, 167, 136, 0.5);
     --wrap-color-dark: rgba(237, 232, 220, 0.5);
+    --border-color-light: #EDE8DC;
   }
 
+  .dark-mode {
+    --dark-color: #EDE8DC;
+    --light-color: #86A788;
+    --text-color: #5C7285;
+    --wrap-color-dark: rgba(134, 167, 136, 0.5);
+    --wrap-color-light: rgba(237, 232, 220, 0.5);
+    --border-color-dark: #EDE8DC;
+    --border-color-light: #86A788;
+  }
 
 
   body {
@@ -31,9 +41,9 @@
 
   button {
     padding: 20px;
-    border-radius: 30%;
+    border-radius: 15%;
     font-size: 20px;
-    border: #86A788 solid 2px;
+    border: var(--border-color-light) solid 2px;
     background-color: var(--light-color);
     transition-duration: 0.4s;
     color: #5C7285;
@@ -45,7 +55,7 @@
 
   button:hover{
     background-color: var(--dark-color);
-    border: #EDE8DC solid 2px;
+    border: var(--border-color-light) solid 2px;
     cursor: pointer;
 
   }
