@@ -37,7 +37,7 @@ function restartGame () {
     console.log(computerScore, humanScore)
     computerScore = 0; 
     humanScore = 0;
-    total.textContent = `Scores: You ${humanScore}, Computer ${computerScore}`
+    total.textContent = `Scores are reset.`
     result.textContent = "Welcome again!"
     move.textContent = ``
     changeGame(false)
