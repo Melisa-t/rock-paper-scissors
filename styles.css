@@ -4,25 +4,19 @@
   }
 
   :root{
-    --background-color-light: #EDE8DC;
-    --background-color-dark: #86A788;
+    --light-color: #EDE8DC;
+    --dark-color: #86A788;
     --text-color: #5C7285;
-    --button-color-light: #EDE8DC;
-    --button-border-color-light: #86A788;
-    --button-color-dark: #86A788;
-    --button-border-color-dark: #EDE8DC;
-    --button-hover-color-light:#86A788;
-    --button-hover-color-dark:#EDE8DC;
-    --button-hover-border-color-dark:#86A788;
-    --button-hover-border-color-light:#EDE8DC;
+    --wrap-color-light: rgba(134, 167, 136, 0.5);
+    --wrap-color-dark: rgba(237, 232, 220, 0.5);
   }
 
 
 
   body {
-    background-color: #EDE8DC;
+    background-color: var(--light-color);
     font-size: 30px;
-    color: #5C7285;
+    color: var(--text-color);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
@@ -40,7 +34,7 @@
     border-radius: 30%;
     font-size: 20px;
     border: #86A788 solid 2px;
-    background-color: #EDE8DC;
+    background-color: var(--light-color);
     transition-duration: 0.4s;
     color: #5C7285;
   }
@@ -50,7 +44,7 @@
   }
 
   button:hover{
-    background-color: #86A788;
+    background-color: var(--dark-color);
     border: #EDE8DC solid 2px;
     cursor: pointer;
 
@@ -66,7 +60,7 @@
     width: 15em;
     height: 15em;
     gap: 20px;
-    background-color: rgba(134, 167, 136, 0.5) ;
+    background-color: var(--wrap-color-light) ;
     border-radius: 10%;
 }
 
@@ -108,7 +102,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--dark-color);
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -120,17 +114,17 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: var(--light-color);
     -webkit-transition: .4s;
     transition: .4s;
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--text-color);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #000000;
   }
   
   input:checked + .slider:before {
