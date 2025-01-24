@@ -9,16 +9,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="content"> 
-        <div class="buttons">
-            <button id="rock" class="game">✊</button>
-            <button id="paper" class="game">✋</button>
-            <button id="scissors" class="game">✌️</button>
-        </div>  
-            <div id="move"></div>
-            <div id="result"></div>
-            <div id="total"></div>
-                <button id="restart">Restart</button>
+    <div class="content flex center"> 
+        <div class="wrap flex center">
+            <div class="buttons flex center">
+                <button id="rock" class="game">✊</button>
+                <button id="paper" class="game">✋</button>
+                <button id="scissors" class="game">✌️</button>
+            </div> 
+                <div class="text">
+                    <div id="move"></div>
+                    <div id="result"></div>
+                    <div id="total"></div>
+                </div>
+
+                    <button id="restart">Restart</button>
+        </div>
     </div>
     <script type="text/javascript" src="script.js"> </script>
 </body>

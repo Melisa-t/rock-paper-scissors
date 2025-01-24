@@ -123,7 +123,7 @@ function playRound(humanChoice, computerChoice) {
 
   function changeGame (isDisabled) {
     console.log(game)
-    for (let i = 0;  i <= 3; i++) {
+    for (let i = 0;  i <= game.length; i++) {
         game[i].disabled = isDisabled;
       }
   }
