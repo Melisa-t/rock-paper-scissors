@@ -10,9 +10,9 @@ Almost all of the functionalities are done through JavaScript via DOM.
 
 Example of day mode and night mode. 
 
-![image](https://prnt.sc/jo2PxZCI6CVL)
+![image](img/img1.jpg)
 
-![image](https://prnt.sc/PgA9lqjnuz8q)
+![image](img/img2.jpg)
 
 ----------------------------------------------------
 
