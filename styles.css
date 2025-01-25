@@ -72,8 +72,8 @@
 
 .wrap {
     flex-direction: column;
-    width: 30em;
-    min-height: 20em;
+    width: 15em;
+    min-height: 15em;
     gap: 20px;
     background-color: var(--wrap-color-light) ;
     border-radius: 10%;
